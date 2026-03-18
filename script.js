@@ -25,12 +25,17 @@ function displayQuote() {
     // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
     // Step 3: Set the text content of the author paragraph
+function displayQuote() {
+    const quote = getRandomQuote();
+    quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
     quoteAuthorElement.textContent = `- ${quote.author}`;
 }
 
 // --- Event Listeners ---
 // Display a random quote when the button is clicked
 if (newQuoteButton) { // Check if button exists before adding listener
+    // *** Add log confirming button found ***
+    console.log("Button found, adding listener."); // NEW LINE
     newQuoteButton.addEventListener('click', displayQuote);
 } else {
     console.error("Button with ID 'new-quote-btn' not found.");
